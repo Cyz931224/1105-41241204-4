@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻牌遊戲</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="start-screen">
+        <div class="select-container">
+            <label for="difficulty">遊戲難易度:</label>
+            <select id="difficulty">
+                <option value="easy">簡單</option>
+                <option value="normal" selected>普通</option>
+                <option value="hard">困難</option>
+            </select>
+        </div>
+        <div class="select-container">
+            <label for="time-display">顯示牌面秒數:</label>
+            <select id="time-display">
+                <option value="3">3秒</option>
+                <option value="5">5秒</option>
+                <option value="10">10秒</option>
+                <option value="15">15秒</option>
+                <option value="20">20秒</option>
+            </select>
+        </div>
+        <div class="select-container">
+            <label for="image-type">遊戲類別:</label>
+            <select id="image-type">
+                <option value="animals">動物</option>
+                <option value="people">人物</option>
+            </select>
+        </div>
+        <div class="select-container">
+            <label for="board-size">網格大小:</label>
+            <select id="board-size">
+                <option value="2">2X2</option>
+                <option value="4" selected>4X4</option>
+                <option value="6">6X6</option>
+            </select>
+        </div>
+        <button id="start-button">開始遊戲</button>
+        <div id="difficulty-description"></div>
+    </div>
+
+    <div id="game-board"></div>
+    <div id="countdown" class="hidden">倒數時間: <span id="timer">0</span>秒</div>
+    <div id="congrats-message" class="hidden">
+        <h2>恭喜通關！</h2>
+        <button id="play-again-button">再玩一次</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

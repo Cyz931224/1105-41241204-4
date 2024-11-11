@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 使內容垂直居中 */
+    margin: 0;
+    background-color: #f0f8ff; /* 淺藍色背景 */
+    font-family: Arial, sans-serif; /* 設置字體 */
+}
+
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* 白色背景 */
+    padding: 40px; /* 增加內邊距 */
+    border-radius: 10px; /* 圓角 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 陰影 */
+    width: 80vw; /* 寬度填滿螢幕 */
+    max-width: 600px; /* 最大寬度 */
+}
+
+label {
+    margin: 10px 0; /* 增加間距 */
+    font-size: 20px; /* 增加字體大小 */
+    text-align: left; /* 文字左對齊 */
+    width: 200px; /* 給標籤一個固定寬度 */
+}
+
+.select-container {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    width: 200px; /* 給容器一個固定寬度 */
+}
+
+select {
+    flex: 1; /* 使下拉選單擴展以填滿容器 */
+    height: 40px; /* 增加下拉選單的高度 */
+    margin-left: 10px; /* 增加標籤和下拉選單之間的間距 */
+    font-size: 16px; /* 增加字體大小 */
+    text-align: center; /* 文字置中 */
+    text-align-last: center; /* 讓下拉選單的選項文字也置中 */
+    border: 1px solid #ccc; /* 邊框 */
+    border-radius: 5px; /* 圓角 */
+    transition: border-color 0.3s; /* 邊框顏色變化 */
+}
+
+select:focus {
+    border-color: #66afe9; /* 聚焦時的邊框顏色 */
+    outline: none; /* 去掉默認的輪廓 */
+}
+
+button {
+    width: 200px; /* 增加按鈕的寬度 */
+    height: 50px; /* 增加按鈕的高度 */
+    font-size: 20px; /* 增加字體大小 */
+    margin-top: 20px; /* 增加間距 */
+    border: none; /* 去掉邊框 */
+    border-radius: 5px; /* 圓角 */
+    background-color: #28a745; /* 綠色背景 */
+    color: white; /* 白色字體 */
+    cursor: pointer; /* 鼠標懸停時顯示手型 */
+    transition: background-color 0.3s; /* 背景顏色變化 */
+}
+
+button:hover {
+    background-color: #218838; /* 懸停時的背景顏色 */
+}
+
+#game-board {
+    display: grid;
+    grid-gap: 20px; /* 增加卡片之間的間距 */
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 120px; /* 調整卡片的寬度 */
+    height: 180px; /* 調整卡片的高度 */
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-front img,
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 確保圖片完整顯示在卡片內，不會被裁剪 */
+}
+
+#countdown {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#congrats-message {
+    text-align: center;
+    font-size: 24px;
+    color: green;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
